@@ -1,0 +1,36 @@
+def solution(n, arr1, arr2):
+    tmp1 = []
+    tmp2 = []
+    cnt = []
+    res = []
+    for i in arr1:
+        aa = str(bin(i)[2:])
+        if len(aa) < n:
+            aa = aa.zfill(n)
+        tmp1.append(aa.zfill(n))
+
+    for j in arr2:
+        bb = str(bin(j)[2:])
+        if len(bb) < n:
+            bb = bb.zfill(n)
+        tmp2.append(bb.zfill(n))
+
+    for q in range(n):
+        for w in range(n):
+            if tmp1[q][w] == tmp2[q][w] == '0':
+                cnt.append(' ')
+            else:
+                cnt.append('#')
+
+    cnt= ''.join(cnt)
+    res = [cnt[k:k+n] for k in range(0, len(cnt), n)]
+
+    return res
+#['1001', '10100', '11100', '10010', '1011']
+#['11110', '1', '10101', '10001', '11100']
+
+#['01001', '10100', '11100', '10010', '01011']
+#['11110', '00001', '11011', '10001', '11100']
+
+n, arr1, arr2 = 5, [9, 20, 28 ,18, 11], [30, 1, 21, 17, 28]
+print(solution(n, arr1, arr2))
