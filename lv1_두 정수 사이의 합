@@ -1,0 +1,15 @@
+def solution(a, b):
+    s = 0
+    if a > b:
+        while(a > b):
+            s += b
+            b += 1
+        s += a
+    elif b > a:
+        while(a < b):
+            s += a
+            a += 1
+        s += b
+    else:
+        return a
+    return s
