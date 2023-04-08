@@ -1,0 +1,11 @@
+def solution(x):
+    s = 0
+    xx = x
+    while (x > 0):
+        s += x%10
+        x //= 10
+    if xx % s == 0:
+        return True
+    else:
+        return False
+    
