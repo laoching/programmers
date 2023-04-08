@@ -1,0 +1,4 @@
+def solution(n):
+    n = int(''.join(sorted(list(str(n)))[::-1]))
+
+    return n
