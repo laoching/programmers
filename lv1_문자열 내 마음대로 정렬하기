@@ -1,0 +1,12 @@
+def solution(strings, n):
+
+    strings.sort(key = lambda x : (x[n], x))
+
+    return strings
+
+
+strings = ["sun", "bed", "car"]
+strings1 = ["abce", "abcd", "cdx"]
+n = 1
+print(solution(strings, n))
+print(solution(strings1, 2))
