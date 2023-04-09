@@ -1,0 +1,9 @@
+def solution(arr):
+    
+    brr = arr
+    for i in range(0, len(arr) - 1):
+        if brr[i] == brr[i + 1]:
+            brr[i] = 'x'
+    while 'x' in brr:
+        brr.remove('x')
+    return brr
