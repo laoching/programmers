@@ -1,0 +1,27 @@
+'''
+def lleft(left):
+    cnt = 0
+    for i in range(1, left + 1):
+        if left % i == 0:
+            cnt += 1
+    if cnt % 2 == 0:
+        return 1
+    else:
+        return -1
+'''
+def solution(left, right):
+    
+    res = 0
+
+    for i in range(left, right + 1):
+        if (i ** (1/2)) % 1 != 0:
+            res += i
+        else:
+            res -= i
+    
+    
+    return res
+
+
+print(solution(13, 17))
+print(solution(24, 27))
